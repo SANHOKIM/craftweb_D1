@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/test.css">
+    <script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+     <script>
+        //1차 작업
+         $(function(){
+
+            $(".swiper-wrapper").width( $(".swiper").width() * $(".swiper-slide").length )
+            $(".swiper-slide").width( $(".swiper").width() )
+
+            $(".noticeclick a").click(function(e){
+                  e.preventDefault();
+                 $(".modal").show(); 
+            });
+            $(".modal button").click(function(){
+                $(".modal").hide()
+            })
+
+            setInterval(function(){
+
+                $(".swiper-wrapper").animate({
+                "marginLeft" : -$(".swiper").width()
+                    }, 400, function(){
+                        $(".swiper-wrapper .swiper-slide:first-child").appendTo($(".swiper-wrapper"))
+                        $(".swiper-wrapper").css({"marginLeft":0})      
+
+                })
+
+            }, 3000)
+
+           
+
+
+         })
+     </script>
+</head>
+<body>
+    <div class="container flex-wrap d-flex w-100 rel">
+        <header class="w200">
+            <h1><a href="">로고</a></h1>
+            <ul id="gnb">
+                <li>
+                    <a href="">대메뉴</a>
+                    <ul>
+                        <li><a href="">소메뉴</a></li>
+                        <li><a href="">소메뉴</a></li>
+                
+                    </ul>
+                </li>
+                <li>
+                    <a href="">대메뉴</a>
+                    <ul>
+                        <li><a href="">소메뉴</a></li>
+                        <li><a href="">소메뉴</a></li>
+                        <li><a href="">소메뉴</a></li>
+                        <li><a href="">소메뉴</a></li>
+                        <li><a href="">소메뉴</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">대메뉴</a>
+                    <ul>
+                        <li><a href="">소메뉴</a></li>
+                        <li><a href="">소메뉴</a></li>
+                        <li><a href="">소메뉴</a></li>
+                        <li><a href="">소메뉴</a></li>
+                        <li><a href="">소메뉴</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">대메뉴</a>
+                    <ul>
+                        <li><a href="">소메뉴</a></li>
+                        <li><a href="">소메뉴</a></li>
+                        <li><a href="">소메뉴</a></li>
+                        <li><a href="">소메뉴</a></li>
+                        <li><a href="">소메뉴</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="util d-flex">
+                <li><a href="">로그인</a></li>
+                <li><a href="">회원가입</a></li>
+            </ul>
+        </header>
+        <div class="content wrest">
+             <div class="swiper h400 ">
+                <div class="swiper-wrapper d-flex">
+                    <div class="swiper-slide h400 red ">이미지</div>
+                    <div class="swiper-slide h400 yellow ">이미지</div>
+                    <div class="swiper-slide h400 blue ">이미지</div>
+                </div>
+             </div>
+             <div class="centerbanner h200"><a href="">이미지</a></div>
+             <div class="tab h250">
+                <ul class="d-flex rel">
+                    <li>
+                        <h2>공지사항</h2>
+                        <ul class="abs left0 w-100">
+                            <li class="noticeclick"><a href="" class="d-flex w-100 jcb"><strong>공지사항제목</strong><span>2024.02.29</span></a></li>
+                            <li><a href="" class="d-flex w-100 jcb"><strong>공지사항제목</strong><span>2024.02.29</span></a></li>
+                            <li><a href="" class="d-flex w-100 jcb"><strong>공지사항제목</strong><span>2024.02.29</span></a></li>
+                            <li><a href="" class="d-flex w-100 jcb"><strong>공지사항제목</strong><span>2024.02.29</span></a></li>
+                            <li><a href="" class="d-flex w-100 jcb"><strong>공지사항제목</strong><span>2024.02.29</span></a></li>
+                        </ul>
+                    </li> 
+                    <li>
+                        <h2>갤러리</h2>
+                        <!-- <ul class="d-flex abs left0">
+                            <li><a href="">이미지</a></li>
+                            <li><a href="">이미지</a></li>
+                            <li><a href="">이미지</a></li>
+                        </ul> -->
+                    </li>
+                </ul>
+             </div>
+
+        </div>
+        <div class="quick abs right0 top0 zup">
+            <ul>
+                <li><a href="">이미지태그</a></li>
+                <li><a href="">이미지태그</a></li>
+                <li><a href="">이미지태그</a></li>
+            </ul>
+        </div>
+        <div class="modal abs w300 h200 m-auto top0 bottom0 left0 right0 zup bg-white">
+            <h2>팝업타이틀</h2>
+            <p>
+                팝업내용<br>
+                팝업내용<br>
+                팝업내용<br>
+            </p>
+            <p class="text-right">
+                <button>닫기</button>
+            </p>            
+        </div>
+        <footer class="w-100 d-flex jcb   h100">
+            <h3 class="w200">하단로고</h3>
+            <p>카피문구 어쩌구저쩌구</p>
+            <ul class="d-flex">
+                <li><a href="">facebook</a></li>
+                <li><a href="">youtube</a></li>
+                <li><a href="">instar</a></li>
+            </ul>
+        </footer>
+    </div>
+     
+</body>
+</html>
